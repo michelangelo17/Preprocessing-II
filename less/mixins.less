@@ -1,1 +1,25 @@
 // Mixins in here
+
+.flexRow(@justify, @align) {
+  display: flex;
+  justify-content: @justify;
+  align-content: @align;
+}
+
+.font(@fontFamily, @fontSize, @fontColor) {
+  font-family: @fontFamily;
+  font-size: @fontSize;
+  color: @fontColor;
+}
+
+.bottomBorder() {
+  border-bottom: 2px dashed @navigation-border;
+}
+
+.buttonMaker(@bgColor, @borderRadius, @paddingTB, @width) {
+  background-color: @bgColor;
+  border-radius: @borderRadius;
+  padding: @paddingTB 0;
+  width: @width;
+  text-align: center;
+}

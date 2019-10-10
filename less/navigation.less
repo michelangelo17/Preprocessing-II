@@ -1,1 +1,23 @@
-// Navigation Styles here
+nav {
+  .bottomBorder();
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color:@main-bg;
+  a {
+    .font(@mainFont, 1.6rem, @shark);
+    text-decoration: none;
+  }
+  .navbar {
+    .flexRow(space-between, center);
+    padding: 30px 0;
+    .navLinks {
+      .flexRow(space-around, center);
+      width: 40%;
+      .navItem {
+        align-self: center;
+      }
+    }
+  }
+}

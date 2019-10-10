@@ -8,12 +8,12 @@
     padding-bottom: 20px;
     .bottomBorder();
     .headerImg {
-      margin-bottom: 30px;
+      margin-bottom: @normalMP;
     }
   }
 
   .content-section {
-    margin: 30px 0;
+    margin: @normalMP 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -39,7 +39,7 @@
   }
 
   .inverse-content {
-    padding-bottom: 30px;
+    padding-bottom: @normalMP;
     border-bottom: 2px dashed @navigation-border;
     @media @mobile {
       display: flex;
@@ -58,7 +58,7 @@
 
   .content-destination {
     width: 75%;
-    margin: 0 auto 30px;
+    margin: 0 auto @normalMP;
     .mobileWidth();
     img {
       border-radius: 10px;
@@ -66,7 +66,7 @@
   }
 
   .content-pick {
-    padding-top: 30px;
+    padding-top: @normalMP;
     border-top: 2px dashed @navigation-border;
     display: flex;
     justify-content: space-between;
@@ -77,14 +77,12 @@
 
     .destination {
       width: 30%;
-      margin-bottom: 30px;
+      margin-bottom: @normalMP;
       @media @mobile {
         width: 90%;
       }
       .btn {
-        .buttonMaker(@button-bg, 10px, 1rem, 80%);
-        .font(@mainFont, 1.8rem, @white);
-        font-weight: 700;
+        .buttonMaker();
         @media @mobile {
           width: 100%;
         }

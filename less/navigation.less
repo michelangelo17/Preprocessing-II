@@ -6,11 +6,10 @@ nav {
   left: 0;
   background-color:@main-bg;
   a {
-    .font(@mainFont, 1.6rem, @shark);
-    text-decoration: none;
+    .font(@fontColor: @shark);
   }
   .navbar {
-    .flexRow(space-between, center);
+    .flex(@jc: space-between; @ai: center);
     padding: 30px 0;
     @media (max-width: 500px) {
       flex-direction: column;
@@ -23,7 +22,7 @@ nav {
       }
     }
     .navLinks {
-      .flexRow(space-around, center);
+      .flex(@jc: space-around; @ai: center);
       width: 40%;
       @media (max-width: 500px) {
         width: 100%;

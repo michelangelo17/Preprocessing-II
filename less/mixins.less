@@ -1,5 +1,6 @@
 // Mixins in here
 
+// sets flex and most common options, with no paramaters behaves like display:flex would by itself
 .flex(@fd: row; @fw: nowrap; @jc: flex-start; @ai: stretch) {
   display: flex;
   flex-direction: @fd;
@@ -17,9 +18,14 @@
   text-decoration: @textDecoration;
 }
 
-.bottomBorder() {
+// same border used repeatedly, will set top or bottom border based on parameter value of t or b
+.dashBorder(@side) when (@side = t) {
+  border-top: 2px dashed @navigation-border;
+}
+.dashBorder(@side) when (@side = b) {
   border-bottom: 2px dashed @navigation-border;
 }
+
 
 // Makes buttons and sets default values for each parameter
 .buttonMaker(@bgColor: @button-bg; @borderRadius: 10px; @paddingTB: 1rem; @width: 80%; @fontFamily: @mainFont; @fontSize: 1.8rem; @fontColor: @white; @fontWeight: bold;) {
@@ -32,6 +38,7 @@
   .font(@fontFamily; @fontSize; @fontColor; @fontWeight);
 }
 
+//sets width to 100% of container for mobile devices
 .mobileWidth() {
   @media @mobile {
     width: 100%;

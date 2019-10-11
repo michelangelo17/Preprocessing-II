@@ -18,12 +18,17 @@
   text-decoration: none;
 }
 
-// same border used repeatedly, will set top or bottom border based on parameter value of t or b
+// generic border tool (set @side to border for all sides)
+.borderMaker(@side; @width: 1px; @style: solid; @color: black) {
+  @{side}: @width @style @color;
+}
+
+// same border styles used repeatedly, will set top or bottom border based on parameter value of t or b
 .dashBorder(@side) when (@side = t) {
-  border-top: 2px dashed @navigation-border;
+  .borderMaker(border-top; 2px; dashed; @navigation-border);
 }
 .dashBorder(@side) when (@side = b) {
-  border-bottom: 2px dashed @navigation-border;
+  .borderMaker(border-bottom; 2px; dashed; @navigation-border);
 }
 
 

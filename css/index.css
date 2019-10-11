@@ -260,18 +260,6 @@ nav .navbar .navLinks .navItem {
 .home header .headerImg {
   margin-bottom: 30px;
 }
-.home header .buyNow {
-  background-color: orange;
-  border-radius: 10px;
-  padding: 1rem 0;
-  width: 80%;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-size: 24px;
-  color: #FFFFFF;
-  font-weight: bold;
-  text-decoration: none;
-}
 .home .content-section {
   margin: 30px 0;
   display: flex;

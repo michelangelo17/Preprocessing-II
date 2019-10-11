@@ -18,8 +18,9 @@
   text-decoration: none;
 }
 
+
 // generic border tool (set @side to border for all sides)
-.borderMaker(@side; @width: 1px; @style: solid; @color: black) {
+.borderMaker(@side: border; @width: 1px; @style: solid; @color: black) {
   @{side}: @width @style @color;
 }
 
@@ -32,7 +33,7 @@
 }
 
 
-// Makes buttons and sets default values for each parameter
+// // Makes buttons and sets default values for each parameter
 .buttonMaker(@bgColor: @button-bg; @borderRadius: 10px; @paddingTB: 1rem; @width: 80%; @fontFamily: @mainFont; @fontSize: 1.8rem; @fontColor: @white; @fontWeight: bold;) {
   background-color: @bgColor;
   border-radius: @borderRadius;
@@ -49,3 +50,5 @@
     width: 100%;
   }
 }
+
+

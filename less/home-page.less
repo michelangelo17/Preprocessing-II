@@ -1,22 +1,43 @@
 .home {
 
-  .content-section {
-    margin: 30px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  header {
+    // margin set according to fixed nav bar height
+    margin: 102px 0 0;
+    @media @mobile {
+      margin-top: 108px;
+    }
 
+    // p tag by default adds 10px padding to bottom, total 30px (current @normalMP value) adjust this if @normalMP changes
+    padding-bottom: 20px;
+    
+    .dashBorder(b);
+    .headerImg {
+      margin-bottom: @normalMP;
+    }
+  }
+
+  .content-section {
+    margin: @normalMP 0;
+    .flex(@fw: wrap; @jc: space-between);
+    
+    @media @mobile {
+      flex-direction: column;
+    }
    
     
     .text-content {
       width: 48%;
       padding-right: 1%;
+      .mobileWidth();
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
-
+      .mobileWidth();
+      @media @tablet {
+        .flex(@jc: center);
+      }
       img {
         border-radius: 10px;
       }
@@ -24,9 +45,11 @@
   }
 
   .inverse-content {
-    padding-bottom: 30px;
-    border-bottom: 2px dashed @navigation-border;
-
+    padding-bottom: @normalMP;
+    .dashBorder(b);
+    @media @mobile {
+      .flex(@fd: column-reverse; @jc: center);
+    }
     .text-content {
       padding-left: 1%;
       padding-right: 0;
@@ -35,27 +58,48 @@
     .img-content {
       padding-right: 1%;
       padding-left: 0;
+      @media @tablet {
+        .flex(@jc: center);
+      }
     }
   }
 
   .content-destination {
     width: 75%;
-    margin: 0 auto 30px;
-
+    margin: 0 auto @normalMP;
+    .mobileWidth();
     img {
       border-radius: 10px;
     }
   }
 
   .content-pick {
-    padding-top: 30px;
-    border-top: 2px dashed @navigation-border;
-    display: flex;
-    justify-content: space-between;
+    padding-top: @normalMP;
+    .dashBorder(t);
+    .flex(@jc: space-between);
+    @media @tablet {
+      flex-direction: column;
+      align-items: center;
+    }
 
     .destination {
       width: 30%;
-      margin-bottom: 30px;
+      margin-bottom: @normalMP;
+      @media @tablet {
+        width: 100%;
+      @media @mobile {
+        width: 90%;
+      }
+
+      }
+      .btn {
+        .buttonMaker();
+        @media @tablet {
+          width: 40%;
+          margin: 10px auto 0;
+        }
+        .mobileWidth();
+      }
     }
   }
 }// home

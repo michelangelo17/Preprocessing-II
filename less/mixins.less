@@ -1,1 +1,54 @@
 // Mixins in here
+
+// sets flex and most common options, with no paramaters behaves like display:flex would by itself
+.flex(@fd: row; @fw: nowrap; @jc: flex-start; @ai: stretch) {
+  display: flex;
+  flex-direction: @fd;
+  flex-wrap: @fw;
+  justify-content: @jc;
+  align-items: @ai;
+}
+
+// sets font options, defaults set for all
+.font(@fontFamily: @mainFont; @fontSize: 1.6rem; @fontColor: black; @fontWeight: normal; @textDecoration: none) {
+  font-family: @fontFamily;
+  font-size: @fontSize;
+  color: @fontColor;
+  font-weight: @fontWeight;
+  text-decoration: none;
+}
+
+
+// generic border tool (set @side to border for all sides)
+.borderMaker(@side: border; @width: 1px; @style: solid; @color: black) {
+  @{side}: @width @style @color;
+}
+
+// same border styles used repeatedly, will set top or bottom border based on parameter value of t or b
+.dashBorder(@side) when (@side = t) {
+  .borderMaker(border-top; 2px; dashed; @navigation-border);
+}
+.dashBorder(@side) when (@side = b) {
+  .borderMaker(border-bottom; 2px; dashed; @navigation-border);
+}
+
+
+// // Makes buttons and sets default values for each parameter
+.buttonMaker(@bgColor: @button-bg; @borderRadius: 10px; @paddingTB: 1rem; @width: 80%; @fontFamily: @mainFont; @fontSize: 1.8rem; @fontColor: @white; @fontWeight: bold;) {
+  background-color: @bgColor;
+  border-radius: @borderRadius;
+  padding: @paddingTB 0;
+  width: @width;
+  text-align: center;
+  // passes in paramaters to font mixin, defaults set
+  .font(@fontFamily; @fontSize; @fontColor; @fontWeight);
+}
+
+//sets width to 100% of container for mobile devices
+.mobileWidth() {
+  @media @mobile {
+    width: 100%;
+  }
+}
+
+

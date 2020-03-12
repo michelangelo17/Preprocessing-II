@@ -1,1 +1,36 @@
-// Navigation Styles here
+nav {
+  .dashBorder(b);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color:@main-bg;
+  a {
+    .font(@fontColor: @shark);
+    &:hover {
+      .font(@fontColor: @button-bg);
+    } 
+  }
+  .navbar {
+    .flex(@jc: space-between; @ai: center);
+    padding: @normalMP 0;
+    @media @mobile {
+      flex-direction: column;
+      text-align: center;
+      padding: 10px 0;
+    }
+    h1 {
+      @media @mobile {
+        padding: 15px 0;
+      }
+    }
+    .navLinks {
+      .flex(@jc: space-around; @ai: center);
+      width: 40%;
+      .mobileWidth();
+      .navItem {
+        align-self: center;
+      }
+    }
+  }
+}
